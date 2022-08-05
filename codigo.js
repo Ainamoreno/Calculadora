@@ -2,15 +2,19 @@ const botonNumeros = document.getElementsByName('numero');
 const botonOperadores = document.getElementsByName('operadores');
 const botonIgual = document.getElementById('operador-igual')
 const botonDelate = document.getElementById('operador-delate')
-pantalla = document.getElementById('pantalla')
+let pantalla = document.getElementById('pantalla-resultado')
+let pantallaProceso = document.getElementById('pantalla')
 let opeActual = ''
+let opeActualProceso = ''
 let opeAnterior = ''
 let operacion = undefined
-console.log(botonNumeros)
 
 botonNumeros.forEach(numeros = (boton) => {
     boton.addEventListener('click', num = () => {
-        mostrarEnPantalla(boton.innerText);
+        mostrarEnPantallaResultado(boton.innerText);
+        
+     
+
     })
 
 })
@@ -22,7 +26,6 @@ botonOperadores.forEach(numeros = (boton) => {
 
 })
 
-
 botonIgual.addEventListener('click', igual = () => {
     calculador();
     actualizarPantalla();
@@ -33,14 +36,17 @@ botonDelate.addEventListener('click', delate = () => {
     actualizarPantalla()
 })
 
-
-
-mostrarEnPantalla = (num) => {
+mostrarEnPantallaResultado = (num) => {
     pantalla.innerHTML += `<div>  
    ${opeActual = opeActual.toString() + num.toString()}
    ${actualizarPantalla()}
    </div`
 }
+/*mostrarEnPantallaProceso = (num1) => {
+    pantallaProceso.innerHTML += `<div>  
+    ${opeActualProceso = opeActualProceso.toString() + num1.toString()}
+    </div`
+}*/
 
 actualizarPantalla = () => {
     pantalla.innerHTML += `<div>  
@@ -57,6 +63,7 @@ seleccionarOperacion = (op) => {
     opeAnterior = opeActual;
     opeActual = '';
 }
+
 
 
 limpiar = () => {
@@ -87,6 +94,7 @@ calculador = () => {
             return;
     }
     opeActual = calculo
+    
 }
 
 
