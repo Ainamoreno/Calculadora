@@ -1,0 +1,26 @@
+#pantalla {
+    display: block;
+    background-color: bisque;
+    width: 15em;
+    height: 6em;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.numero {
+    background-color: brown; 
+    width: 4em;
+    height: 4em;
+    border-radius: 25px;
+    
+}
+.numero:hover {
+    background: rgba(0, 0, 0, 0.267);
+}
+
+.operadores {
+    background-color: brown; 
+    width: 4em;
+    height: 4em;
+    border-radius: 25px;
+}
