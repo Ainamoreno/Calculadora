@@ -1,8 +1,8 @@
 #pantalla {
     display: block;
     background-color: bisque;
-    width: 15em;
-    height: 6em;
+    width: 17em;
+    height: 8em;
     border: 1px solid black;
     border-radius: 25px;
 }
