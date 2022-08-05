@@ -12,8 +12,6 @@ let operacion = undefined
 botonNumeros.forEach(numeros = (boton) => {
     boton.addEventListener('click', num = () => {
         mostrarEnPantallaResultado(boton.innerText);
-        
-     
 
     })
 
