@@ -1,71 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./codigo.css" type="text/css" rel="stylesheet">
-    <title>Calculadora</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./codigo.css" type="text/css" rel="stylesheet">
+  <title>Calculadora</title>
 </head>
+
 <body>
-  
-  <table class="tabla">
-    <form >
-      <div>
-        <input class=pantalla id="pantalla-resultado" type="text" >
-        <input class=pantalla id="pantalla" type="text"> 
-      </div>
-     
-    </form>
 
-    <tr>
-  
-      <td><button name="numero" class="numero">7</button></td>
-  
-      <td><button name="numero" class="numero" >8</button></td>
+  <table>
+    <tbody>
 
-      <td><button name="numero" class="numero">9</button></td>
-
-      <td><button name="operadores" id="operadores" class="numero">/</button></td>
-  
-    </tr>
-  
-    <tr>
-  
-      <td><button name="numero" class="numero">4</button></td>
-  
-      <td><button name="numero" class="numero">5</button></td>
-  
-      <td><button name="numero" class="numero">6</button></td>
-
-      <td><button name="operadores" id="operadores" class="numero">x</button></td>
-  
-    </tr>
-    <tr>
-  
-        <td><button name="numero" class="numero">1</button></td>
-    
-        <td><button name="numero" class="numero">2</button></td>
-    
-        <td><button name="numero" class="numero">3</button></td>
-
-        <td><button name="operadores" id="operadores" class="numero">+</button></td>
-    
+      <tr>
+        <td colspan="4"> <input class=pantalla id="pantalla-resultado" type="text" disabled="true"></td>
       </tr>
 
       <tr>
-  
-        <td><button  name="numero" id="col-2" class="numero">0</button></td>
-    
-        <td><button class="operadores" id="operador-igual">=</button></td>
-    
-        <td><button name="operadores" id="operadores" class="numero">-</button></td>
-
-        <td ><button  class="operadores" id="operador-delate">C</button></td>
-    
+        <td colspan="4"><input class=pantalla id="pantalla" type="text" disabled="true"></td>
       </tr>
 
+      <tr>
+        <td><button name="numero" class="numero">7</button></td>
+        <td><button name="numero" class="numero">8</button></td>
+        <td><button name="numero" class="numero">9</button></td>
+        <td><button name="operadores" id="operadores" class="numero">/</button></td>
+      </tr>
+
+      <tr>
+        <td><button name="numero" class="numero">4</button></td>
+        <td><button name="numero" class="numero">5</button></td>
+        <td><button name="numero" class="numero">6</button></td>
+        <td><button name="operadores" id="operadores" class="numero">x</button></td>
+      </tr>
+
+      <tr>
+        <td><button name="numero" class="numero">1</button></td>
+        <td><button name="numero" class="numero">2</button></td>
+        <td><button name="numero" class="numero">3</button></td>
+        <td><button name="operadores" id="operadores" class="numero">+</button></td>
+      </tr>
+
+      <tr>
+        <td><button name="numero" id="col-2" class="numero">0</button></td>
+        <td><button class="operadores" id="operador-igual">=</button></td>
+        <td><button name="operadores" id="operadores" class="numero">-</button></td>
+        <td><button class="operadores" id="operador-delate">C</button></td>
+      </tr>
+
+    </tbody>
   </table>
-  <script src="./codigo.js" > </script>
+
+  <script src="./codigo.js"> </script>
 </body>
+
 </html>

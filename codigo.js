@@ -1,98 +1,95 @@
 const botonNumeros = document.getElementsByName('numero');
 const botonOperadores = document.getElementsByName('operadores');
-const botonIgual = document.getElementById('operador-igual')
-const botonDelate = document.getElementById('operador-delate')
-let pantalla = document.getElementById('pantalla-resultado')
-let pantallaProceso = document.getElementById('pantalla')
-let opeActual = ''
-let opeActualProceso = ''
-let opeAnterior = ''
-let operacion = undefined
+const botonIgual = document.getElementById('operador-igual');
+const botonDelate = document.getElementById('operador-delate');
+let pantalla = document.getElementById('pantalla-resultado');
+let pantallaProceso = document.getElementById('pantalla');
+let numActual = '';
+let numAnterior = '';
+let resultado = '';
+let operacion = '';
 
-botonNumeros.forEach(numeros = (boton) => {
+botonNumeros.forEach(boton => {
     boton.addEventListener('click', num = () => {
-        mostrarEnPantallaResultado(boton.innerText);
-
+        numActual = numActual.toString() + boton.innerText.toString();
+        actualizarPantalla();
     })
-
 })
 
-botonOperadores.forEach(numeros = (boton) => {
+botonOperadores.forEach(boton => {
     boton.addEventListener('click', num = () => {
         seleccionarOperacion(boton.innerText);
     })
-
 })
 
-botonIgual.addEventListener('click', igual = () => {
+botonIgual.addEventListener('click', () => {
     calculador();
     actualizarPantalla();
 })
 
-botonDelate.addEventListener('click', delate = () => {
+botonDelate.addEventListener('click', () => {
     limpiar();
-    actualizarPantalla()
+    actualizarPantalla();
 })
 
-mostrarEnPantallaResultado = (num) => {
-    pantalla.innerHTML += `<div>  
-   ${opeActual = opeActual.toString() + num.toString()}
-   ${actualizarPantalla()}
-   </div`
-}
-/*mostrarEnPantallaProceso = (num1) => {
-    pantallaProceso.innerHTML += `<div>  
-    ${opeActualProceso = opeActualProceso.toString() + num1.toString()}
-    </div`
-}*/
-
 actualizarPantalla = () => {
-    pantalla.innerHTML += `<div>  
-    ${pantalla.value = opeActual}
-    </div`
+    pantalla.value = resultado ? resultado : numActual;
+
+    if (resultado) {
+        pantallaProceso.value = `${numAnterior} ${operacion} ${numActual} = ${resultado}`;
+    }
+    
+    console.log('numActual', numActual);
+    console.log('numAnterior', numAnterior);
+    console.log('resultado', resultado);
+   //pantallaProceso.innerHTML += `${opeActualProceso = opeActualProceso.toString() + num1.toString()}`;
 }
 
 seleccionarOperacion = (op) => {
-    if (opeActual === '') return
-    if (opeActual !== '') {
+    if (numActual === '') return
+    if (numActual !== '') {
         calculador()
     }
     operacion = op.toString();
-    opeAnterior = opeActual;
-    opeActual = '';
+    numAnterior = numActual;
+    numActual = '';
 }
 
 
 
 limpiar = () => {
-    opeActual = '';
-    opeAnterior = '';
-
-
+    numActual = '';
+    numAnterior = '';
+    resultado = '';
+    pantalla.value = '';
+    pantallaProceso.value = '';
 }
+
 calculador = () => {
-    let calculo
-    const actual = Number(opeActual);
-    const anterior = Number(opeAnterior);
+    const actual = Number(numActual);
+    const anterior = Number(numAnterior);
     if (isNaN(actual) || isNaN(anterior)) return
     switch (operacion) {
         case '+':
-            calculo = anterior + actual
+            resultado = anterior + actual
             break;
         case '-':
-            calculo = anterior - actual
+            resultado = anterior - actual
             break;
         case '/':
-            calculo = anterior / actual
+            resultado = anterior / actual
             break;
         case 'x':
-            calculo = anterior * actual
+            resultado = anterior * actual
             break;
         default:
             return;
     }
-    opeActual = calculo
-    
 }
 
+/*mostrarEnPantallaProceso = (num1) => {
+    pantallaProceso.innerHTML += `<div>  
+    ${opeActualProceso = opeActualProceso.toString() + num1.toString()}
+    </div`
+}*/
 

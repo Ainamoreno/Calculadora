@@ -2,9 +2,17 @@ body {
     background: bisque;
 }
 
+table {
+    border: 4px black solid;
+    padding: 1em;
+    background-color: cadetblue;
+    box-shadow: rgb(0 0 0 / 50%) 0px 15px 60px;
+}
+
 .pantalla {
     display: block;
     background-color: bisque;
+    margin: 0.5em 0em;
     width: 17em;
     height: 2em;
     border: 1px solid black;
